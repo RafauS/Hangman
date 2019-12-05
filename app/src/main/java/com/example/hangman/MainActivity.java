@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button buttA, buttB, buttC, buttD, buttE, buttF, buttG, buttH, buttI, buttJ, buttK, buttL, buttM, buttN, buttO, buttP, buttQ, buttR, buttS, buttT, buttU, buttV, buttW, buttX, buttY, buttZ;
     private TextView wordTextId;
-    final private String word = "KETCHUP";
+    final private String word = "KETCUUUUUUHUP";
     private int lengthWord = word.length();
     private StringBuilder resultString = new StringBuilder();
 
