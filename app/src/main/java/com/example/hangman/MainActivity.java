@@ -7,24 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button buttA, buttB, buttC, buttD, buttE, buttF, buttG, buttH, buttI, buttJ, buttK, buttL, buttM, buttN, buttO, buttP, buttQ, buttR, buttS, buttT, buttU, buttV, buttW, buttX, buttY, buttZ;
     private TextView wordTextId;
 
-    final private String word = "KETCHUP";
+    private String word = "KETCHUP";
     private int lengthWord = word.length();
 
     private StringBuilder resultString = new StringBuilder();
 
-    final private int maxAttempts = 0;
+    private int maxAttempts = 5;
+    private int attempt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        attempt = 0;
         initializationButtons();
         setButtonsOnClick();
         setUnderscores();
@@ -109,7 +111,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String letter = (String)alphabetButtons.getText();
 
         if(checkIncludeLetterAndReplaceInsteadOfUnderscore(letter)) switchPropertiesButtonAfterGoodChoice(alphabetButtons);
-        else switchPropertiesButtonAfterWrongChoice(alphabetButtons);
+        else{
+            switchPropertiesButtonAfterWrongChoice(alphabetButtons);
+            switch(attempt){
+                case 1:
+
+            }
+        }
+        if(checkWin()) Toast.makeText(getApplicationContext(),"YOU WIN !!",Toast.LENGTH_SHORT).show();
 
 
     }
@@ -138,6 +147,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         wordTextId.setText(resultWithSpace);
+
     }
 
     private void switchPropertiesButtonAfterWrongChoice(Button b){
@@ -149,6 +159,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b.setEnabled(false);
         b.setTextColor(Color.parseColor("#00FF00"));
         setTextViewInApp();
+    }
+
+    private boolean checkWin(){
+        int counter = 0;
+
+        for(int i = 0; i<lengthWord;i++){
+            if(resultString.charAt(i) == '_') counter++;
+        }
+
+        if(counter>0) return false;
+        else return true;
     }
 
 }
