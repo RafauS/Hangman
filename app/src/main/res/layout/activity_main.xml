@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.076"
-        app:srcCompat="@color/colorAccent" />
+        app:srcCompat="@drawable/handman" />
 
     <TextView
         android:id="@+id/wordText"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:text="_ _ _ _ _ _ _"
-        android:textSize="40dp"
+        android:textSize="34dp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

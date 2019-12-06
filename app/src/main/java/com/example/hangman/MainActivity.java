@@ -12,9 +12,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button buttA, buttB, buttC, buttD, buttE, buttF, buttG, buttH, buttI, buttJ, buttK, buttL, buttM, buttN, buttO, buttP, buttQ, buttR, buttS, buttT, buttU, buttV, buttW, buttX, buttY, buttZ;
     private TextView wordTextId;
-    final private String word = "KETCUUUUUUHUP";
+
+    final private String word = "KETCHUP";
     private int lengthWord = word.length();
+
     private StringBuilder resultString = new StringBuilder();
+
+    final private int maxAttempts = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
