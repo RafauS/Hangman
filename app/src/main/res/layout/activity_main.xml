@@ -8,15 +8,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="249dp"
-        android:layout_height="276dp"
+        android:layout_width="259dp"
+        android:layout_height="273dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.076"
-        app:srcCompat=" />
+        app:srcCompat="@drawable/zero" />
 
     <TextView
         android:id="@+id/wordText"

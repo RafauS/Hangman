@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button buttA, buttB, buttC, buttD, buttE, buttF, buttG, buttH, buttI, buttJ, buttK, buttL, buttM, buttN, buttO, buttP, buttQ, buttR, buttS, buttT, buttU, buttV, buttW, buttX, buttY, buttZ;
     private TextView wordTextId;
+    private ImageView imageView;
 
     private String word = "KETCHUP";
     private int lengthWord = word.length();
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        imageView = findViewById(R.id.imageView);
         attempt = 0;
         initializationButtons();
         setButtonsOnClick();
@@ -113,8 +116,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(checkIncludeLetterAndReplaceInsteadOfUnderscore(letter)) switchPropertiesButtonAfterGoodChoice(alphabetButtons);
         else{
             switchPropertiesButtonAfterWrongChoice(alphabetButtons);
-            switch(attempt){
+            switch(++attempt){
                 case 1:
+                    imageView.setImageResource(R.drawable.one);
+                    break;
+                case 2:
+                    imageView.setImageResource(R.drawable.two);
+                    break;
+                case 3:
+                    imageView.setImageResource(R.drawable.three);
+                    break;
+                case 4:
+                    imageView.setImageResource(R.drawable.four);
+                    break;
+                case 5:
+                    imageView.setImageResource(R.drawable.five);
+                    Toast.makeText(getApplicationContext(),"YOU LOST !!",Toast.LENGTH_SHORT).show();
+                    break;
 
             }
         }
