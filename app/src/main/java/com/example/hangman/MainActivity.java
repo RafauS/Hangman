@@ -2,6 +2,7 @@ package com.example.hangman;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -10,16 +11,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button buttA, buttB, buttC, buttD, buttE, buttF, buttG, buttH, buttI, buttJ, buttK, buttL, buttM, buttN, buttO, buttP, buttQ, buttR, buttS, buttT, buttU, buttV, buttW, buttX, buttY, buttZ;
+    private Button buttA, buttB, buttC, buttD, buttE, buttF, buttG, buttH, buttI, buttJ, buttK, buttL, buttM, buttN, buttO, buttP, buttQ, buttR, buttS, buttT, buttU, buttV, buttW, buttX, buttY, buttZ,
+                    retry;
     private TextView wordTextId;
     private ImageView imageView;
+
+    private Dialog winDialog;
 
     private String word = "KETCHUP";
     private int lengthWord = word.length();
 
     private StringBuilder resultString = new StringBuilder();
+
+    private ArrayList<Button> buttonArry;
 
     private int maxAttempts = 5;
     private int attempt;
@@ -29,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imageView = findViewById(R.id.imageView);
+        buttonArry = new ArrayList<Button>();
         attempt = 0;
         initializationButtons();
         setButtonsOnClick();
@@ -136,7 +145,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         }
-        if(checkWin()) Toast.makeText(getApplicationContext(),"YOU WIN !!",Toast.LENGTH_SHORT).show();
+        if(checkWin()){
+            openWinDialog();
+        }
 
 
     }
@@ -169,11 +180,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void switchPropertiesButtonAfterWrongChoice(Button b){
+        buttonArry.add(b);
         b.setEnabled(false);
         b.setTextColor(Color.parseColor("#FF0000"));
     }
 
     private void switchPropertiesButtonAfterGoodChoice(Button b){
+        buttonArry.add(b);
         b.setEnabled(false);
         b.setTextColor(Color.parseColor("#00FF00"));
         setTextViewInApp();
@@ -188,6 +201,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(counter>0) return false;
         else return true;
+    }
+
+    private void openWinDialog(){
+        winDialog = new Dialog(MainActivity.this);
+        winDialog.setContentView(R.layout.windialog);
+        winDialog.setTitle("Win Dialog");
+
+        retry = (Button)winDialog.findViewById(R.id.retryGameButton);
+
+        retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                winDialog.dismiss();
+                reInitializationView();
+
+            }
+        });
+        winDialog.show();
+    }
+
+    private void reInitializationView(){
+        for(Button b: buttonArry){
+            b.setEnabled(true);
+            b.setTextColor(Color.parseColor("#FFFFFF"));
+        }
     }
 
 }
