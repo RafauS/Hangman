@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView wordTextId;
     private ImageView imageView;
 
-    private Dialog winDialog;
+    private Dialog winDialog, loseDialog;
 
     private String word = "KETCHUP";
     private int lengthWord = word.length();
 
-    private StringBuilder resultString = new StringBuilder();
+    private StringBuilder resultString;
 
     private ArrayList<Button> buttonArry;
 
@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setUnderscores(){
         wordTextId = (TextView) findViewById(R.id.wordText);
         StringBuilder underscores = new StringBuilder();
+        resultString = new StringBuilder();
 
         for(int i = 0;i<lengthWord;i++){
             underscores.append("_");
@@ -140,7 +141,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case 5:
                     imageView.setImageResource(R.drawable.five);
-                    Toast.makeText(getApplicationContext(),"YOU LOST !!",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),"YOU LOST !!",Toast.LENGTH_SHORT).show();
+                    openLoseDialog();
                     break;
 
             }
@@ -221,10 +223,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         winDialog.show();
     }
 
+    private void openLoseDialog(){
+        loseDialog = new Dialog(MainActivity.this);
+        loseDialog.setContentView(R.layout.losedialog);
+        loseDialog.setTitle("Lose Dialog");
+
+        //retry = (Button)winDialog.findViewById(R.id.retryGameButton);
+
+/*        retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                winDialog.dismiss();
+                reInitializationView();
+
+            }
+        });*/
+        loseDialog.show();
+    }
+
     private void reInitializationView(){
         for(Button b: buttonArry){
             b.setEnabled(true);
             b.setTextColor(Color.parseColor("#FFFFFF"));
+            imageView.setImageResource(R.drawable.zero);
+            attempt = 0;
+            setUnderscores();
+            setTextViewInApp();
+
         }
     }
 
