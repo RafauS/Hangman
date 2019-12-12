@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:text="Choose Categories"
+        android:gravity="center">
+    </TextView>
+
+    <Button
+        android:id="@+id/sportCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SPORT">
+    </Button>
+    <Button
+        android:id="@+id/filmCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FILM">
+    </Button>
+    <Button
+        android:id="@+id/animalCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animal">
+    </Button>
+
+
+
+
+
+
+</LinearLayout>

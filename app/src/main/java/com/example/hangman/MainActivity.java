@@ -3,6 +3,7 @@ package com.example.hangman;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -12,20 +13,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button buttA, buttB, buttC, buttD, buttE, buttF, buttG, buttH, buttI, buttJ, buttK, buttL, buttM, buttN, buttO, buttP, buttQ, buttR, buttS, buttT, buttU, buttV, buttW, buttX, buttY, buttZ,
                     retry;
-    private TextView wordTextId;
+    private TextView wordTextId, categoryText;
     private ImageView imageView;
 
     private Dialog winDialog, loseDialog;
 
-    private String word = "KETCHUP";
-    private int lengthWord = word.length();
+    private String word = "";
+    private int lengthWord;
 
     private StringBuilder resultString;
+
+    private String category = "";
 
     private ArrayList<Button> buttonArry;
 
@@ -36,11 +40,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         imageView = findViewById(R.id.imageView);
         buttonArry = new ArrayList<Button>();
         attempt = 0;
+
         initializationButtons();
         setButtonsOnClick();
+        setCategoryText();
+        randomWord();
         setUnderscores();
         setTextViewInApp();
     }
@@ -209,8 +217,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         winDialog = new Dialog(MainActivity.this);
         winDialog.setContentView(R.layout.windialog);
         winDialog.setTitle("Win Dialog");
+        winDialog.setCancelable(false);
 
-        retry = (Button)winDialog.findViewById(R.id.retryGameButton);
+        retry = (Button)winDialog.findViewById(R.id.retryGameButtonWin);
 
         retry.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,17 +236,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         loseDialog = new Dialog(MainActivity.this);
         loseDialog.setContentView(R.layout.losedialog);
         loseDialog.setTitle("Lose Dialog");
+        loseDialog.setCancelable(false);
 
-        //retry = (Button)winDialog.findViewById(R.id.retryGameButton);
-
-/*        retry.setOnClickListener(new View.OnClickListener() {
+        retry = (Button)loseDialog.findViewById(R.id.retryGameButtonLose);
+        retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                winDialog.dismiss();
+                loseDialog.dismiss();
                 reInitializationView();
-
             }
-        });*/
+        });
+
         loseDialog.show();
     }
 
@@ -247,10 +256,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             b.setTextColor(Color.parseColor("#FFFFFF"));
             imageView.setImageResource(R.drawable.zero);
             attempt = 0;
+            randomWord();
             setUnderscores();
             setTextViewInApp();
-
         }
     }
 
+    private void randomWord(){
+        String wordsArray[] = {"KETCHUP","WINDOW","BOOK","WATCH","KNEE","DOLL","LUNCH","BRICK","COVER","BAT"};
+
+
+        int randomValue = new Random().nextInt(wordsArray.length);
+
+        word = wordsArray[randomValue];
+
+        lengthWord = word.length();
+    }
+
+    private void setCategoryText(){
+        Intent intent = getIntent();
+
+        category = intent.getStringExtra("CATEGORY");
+        categoryText = (TextView) findViewById(R.id.textCategory);
+        categoryText.setText(category);
+    }
 }
