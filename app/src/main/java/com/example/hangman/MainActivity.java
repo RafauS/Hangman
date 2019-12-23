@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Dialog winDialog, loseDialog;
 
+    private DBManager dbManager;
+
     private String word = "";
     private int lengthWord;
 
@@ -263,12 +265,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void randomWord(){
-        String wordsArray[] = {"KETCHUP","WINDOW","BOOK","WATCH","KNEE","DOLL","LUNCH","BRICK","COVER","BAT"};
+
+        dbManager = new DBManager(this);
+        dbManager.open();
+        ArrayList wordsArray = dbManager.getColumnDates(category);
+        dbManager.close();
 
 
-        int randomValue = new Random().nextInt(wordsArray.length);
+        int randomValue = new Random().nextInt(wordsArray.size());
 
-        word = wordsArray[randomValue];
+        word = wordsArray.get(randomValue).toString().toUpperCase();
 
         lengthWord = word.length();
     }

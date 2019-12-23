@@ -1,6 +1,8 @@
 package com.example.hangman;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +11,9 @@ import android.widget.Button;
 
 public class CategoriesActivity extends AppCompatActivity implements View.OnClickListener {
 
+    RecyclerView recyclerView;
+    private DatabaseHelper dbHelper;
+    CategoryAdapter categoryAdapter;
     private Button sport, film, animal;
     String textFromButton;
 
@@ -16,13 +21,14 @@ public class CategoriesActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
-        initButtonsAndOnClicks();
+        initRecycleView();
+
     }
 
     private void initButtonsAndOnClicks(){
-        sport = (Button) findViewById(R.id.sportCategory);
-        film = (Button) findViewById(R.id.filmCategory);
-        animal = (Button) findViewById(R.id.animalCategory);
+        //sport = (Button) findViewById(R.id.sportCategory);
+        //film = (Button) findViewById(R.id.filmCategory);
+        //animal = (Button) findViewById(R.id.animalCategory);
 
         sport.setOnClickListener(this);
         film.setOnClickListener(this);
@@ -36,5 +42,30 @@ public class CategoriesActivity extends AppCompatActivity implements View.OnClic
         Intent intent = new Intent(CategoriesActivity.this, MainActivity.class);
         intent.putExtra("CATEGORY",textFromButton);
         startActivity(intent);
+    }
+
+    public void initRecycleView(){
+
+                    int[] images = {R.drawable.sport, R.drawable.animal,R.drawable.food,R.drawable.family};////////////////////////
+                    final String[] names = getResources().getStringArray(R.array.categories);
+
+
+
+        recyclerView = (RecyclerView) findViewById(R.id.category_recycleView);
+        categoryAdapter = new CategoryAdapter(this,images,names);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(categoryAdapter);
+
+
+        categoryAdapter.setOnItemClickListener(new CategoryAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                textFromButton = names[position];
+                Intent intent = new Intent(CategoriesActivity.this, MainActivity.class);
+                intent.putExtra("CATEGORY",textFromButton);
+                startActivity(intent);
+            }
+        });
     }
 }

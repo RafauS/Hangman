@@ -2,38 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="400dp"
-        android:layout_height="60dp"
-        android:text="Choose Categories"
-        android:gravity="center">
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="CHOOSE CATEGORY"
+        android:textAlignment="center"
+        android:gravity="center_vertical">
+
     </TextView>
 
-    <Button
-        android:id="@+id/sportCategory"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/category_recycleView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SPORT">
-    </Button>
-    <Button
-        android:id="@+id/filmCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FILM">
-    </Button>
-    <Button
-        android:id="@+id/animalCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Animal">
-    </Button>
+        android:layout_height="match_parent">
 
-
-
-
-
-
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
 </LinearLayout>

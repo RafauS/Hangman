@@ -9,4 +9,12 @@
     </style>
 
 
+    <string-array name="categories">
+        <item>SPORT</item>
+        <item>ANIMAL</item>
+        <item>FOOD</item>
+        <item>FAMILY</item>
+    </string-array>
+
+
 </resources>
