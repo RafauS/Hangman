@@ -46,8 +46,8 @@ public class CategoriesActivity extends AppCompatActivity implements View.OnClic
 
     public void initRecycleView(){
 
-                    int[] images = {R.drawable.sport, R.drawable.animal,R.drawable.food,R.drawable.family};////////////////////////
-                    final String[] names = getResources().getStringArray(R.array.categories);
+         int[] images = {R.drawable.sport, R.drawable.animal,R.drawable.food,R.drawable.family};////////////////////////
+         final String[] names = getResources().getStringArray(R.array.categories);
 
 
 
