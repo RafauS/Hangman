@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
 
     <ImageView
         android:id="@+id/imageView"
@@ -70,161 +71,186 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp">
 
             <Button
                 android:id="@+id/ButtA"
-                android:layout_width="56dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/a" />
+                android:text="@string/a"
+                android:background="@drawable/custom_button_letter"
+                android:fontFamily="@font/allerta"/>
 
             <Button
                 android:id="@+id/ButtB"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/b" />
+                android:text="@string/b"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtC"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/c" />
+                android:text="@string/c"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtD"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/d" />
+                android:text="@string/d"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtE"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/e" />
+                android:text="@string/e"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtF"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/f" />
+                android:text="@string/f"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtG"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
-                android:text="@string/g" />
+                android:text="@string/g"
+                android:background="@drawable/custom_button_letter"/>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp">
 
             <Button
                 android:id="@+id/ButtH"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/h" />
+                android:text="@string/h"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtI"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/i" />
+                android:text="@string/i"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtJ"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/j" />
+                android:text="@string/j"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtK"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/k" />
+                android:text="@string/k"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtL"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/l" />
+                android:text="@string/l"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtM"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/m" />
+                android:text="@string/m"
+                android:background="@drawable/custom_button_letter" />
 
             <Button
                 android:id="@+id/ButtN"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
-                android:text="@string/n" />
+                android:text="@string/n"
+                android:background="@drawable/custom_button_letter"/>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp">
 
             <Button
                 android:id="@+id/ButtO"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/o" />
+                android:text="@string/o"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtP"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/p" />
+                android:text="@string/p"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtQ"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/q" />
+                android:text="@string/q"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtR"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/r" />
+                android:text="@string/r"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtS"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/s" />
+                android:text="@string/s"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtT"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/t" />
+                android:text="@string/t"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtU"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
-                android:text="@string/u" />
+                android:text="@string/u"
+                android:background="@drawable/custom_button_letter"/>
         </TableRow>
 
         <TableRow
@@ -237,35 +263,40 @@
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/v" />
+                android:text="@string/v"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtW"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/w" />
+                android:text="@string/w"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtX"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/x" />
+                android:text="@string/x"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtY"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/y" />
+                android:text="@string/y"
+                android:background="@drawable/custom_button_letter"/>
 
             <Button
                 android:id="@+id/ButtZ"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="@string/z" />
+                android:text="@string/z"
+                android:background="@drawable/custom_button_letter"/>
 
         </TableRow>
 

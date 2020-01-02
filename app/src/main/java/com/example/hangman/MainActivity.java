@@ -151,6 +151,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 case 5:
                     imageView.setImageResource(R.drawable.five);
+                    break;
+                case 6:
+                    imageView.setImageResource(R.drawable.six);
                     //Toast.makeText(getApplicationContext(),"YOU LOST !!",Toast.LENGTH_SHORT).show();
                     openLoseDialog();
                     break;
