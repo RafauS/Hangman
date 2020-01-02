@@ -5,11 +5,11 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.hangman"
-        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdkVersion 25
     }
     buildTypes {
         release {
