@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -223,6 +225,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         winDialog.setContentView(R.layout.windialog);
         winDialog.setTitle("Win Dialog");
         winDialog.setCancelable(false);
+        winDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
         retry = (Button)winDialog.findViewById(R.id.retryGameButtonWin);
 
@@ -242,6 +245,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         loseDialog.setContentView(R.layout.losedialog);
         loseDialog.setTitle("Lose Dialog");
         loseDialog.setCancelable(false);
+        loseDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
         retry = (Button)loseDialog.findViewById(R.id.retryGameButtonLose);
         retry.setOnClickListener(new View.OnClickListener() {

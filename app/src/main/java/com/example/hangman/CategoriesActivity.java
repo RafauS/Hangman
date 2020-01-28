@@ -22,18 +22,8 @@ public class CategoriesActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
         initRecycleView();
-
     }
 
-    private void initButtonsAndOnClicks(){
-        //sport = (Button) findViewById(R.id.sportCategory);
-        //film = (Button) findViewById(R.id.filmCategory);
-        //animal = (Button) findViewById(R.id.animalCategory);
-
-        sport.setOnClickListener(this);
-        film.setOnClickListener(this);
-        animal.setOnClickListener(this);
-    }
 
     @Override
     public void onClick(View v) {
@@ -46,10 +36,8 @@ public class CategoriesActivity extends AppCompatActivity implements View.OnClic
 
     public void initRecycleView(){
 
-         int[] images = {R.drawable.family,R.drawable.family, R.drawable.animal,R.drawable.food,R.drawable.family};////////////////////////
+         int[] images = {R.drawable.sport,R.drawable.family, R.drawable.animal,R.drawable.food,R.drawable.school};////////////////////////
          final String[] names = getResources().getStringArray(R.array.categories);
-
-
 
         recyclerView = (RecyclerView) findViewById(R.id.category_recycleView);
         categoryAdapter = new CategoryAdapter(this,images,names);

@@ -33,7 +33,7 @@ public class DBManager {
         Cursor res = database.rawQuery("Select * from CATEGORIES WHERE " + columnName + " IS NOT NULL",null);
         res.moveToFirst();
 
-        while(res.isAfterLast() == false) {
+        while(!res.isAfterLast()) {
                 arr.add(res.getString(res.getColumnIndex(columnName)));
                 res.moveToNext();
         }

@@ -1,32 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    >
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="40dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
-    <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@android:color/holo_red_dark">
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="YOU LOSE :("
-            android:textSize="30sp"
-            android:textAlignment="center">
-        </TextView>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp">
 
-        <Button
-            android:id="@+id/retryGameButtonLose"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:text="Draw Word Again">
-        </Button>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:text="YOU LOSE"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="MAYBE NEXT TIME"
+                android:textAlignment="center">
+            </TextView>
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="164dp"
+                android:layout_height="138dp"
+                android:layout_gravity="center"
+                android:src="@drawable/sadpika">
 
-</LinearLayout>
+            </ImageView>
+
+            <Button
+                android:id="@+id/retryGameButtonLose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="60dp"
+                android:layout_marginLeft="60dp"
+                android:background="@drawable/button_dialog"
+                android:text="Draw Word Again"
+                android:textSize="15sp">
+            </Button>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

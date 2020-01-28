@@ -32,4 +32,13 @@
     <string name="z">Z</string>
 
 
+    <string-array name="categories">
+        <item>SPORT</item>
+        <item>FAMILY</item>
+        <item>ANIMAL</item>
+        <item>FOOD</item>
+        <item>SCHOOL</item>
+    </string-array>
+
+
 </resources>
