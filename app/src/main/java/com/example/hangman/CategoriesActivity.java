@@ -12,9 +12,7 @@ import android.widget.Button;
 public class CategoriesActivity extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView recyclerView;
-    private DatabaseHelper dbHelper;
     CategoryAdapter categoryAdapter;
-    private Button sport, film, animal;
     String textFromButton;
 
     @Override
@@ -36,7 +34,7 @@ public class CategoriesActivity extends AppCompatActivity implements View.OnClic
 
     public void initRecycleView(){
 
-         int[] images = {R.drawable.sport,R.drawable.family, R.drawable.animal,R.drawable.food,R.drawable.school};////////////////////////
+         int[] images = {R.drawable.sport,R.drawable.family, R.drawable.animal,R.drawable.food,R.drawable.school};
          final String[] names = getResources().getStringArray(R.array.categories);
 
         recyclerView = (RecyclerView) findViewById(R.id.category_recycleView);

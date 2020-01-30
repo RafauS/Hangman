@@ -15,27 +15,23 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private Button start;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
         initButtonStart();
-
-
     }
 
 
-    private void initButtonStart(){
+    private void initButtonStart() {
         start = (Button) findViewById(R.id.startButton);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WelcomeActivity.this,CategoriesActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this, CategoriesActivity.class);
                 startActivity(intent);
             }
         });
     }
-
 }

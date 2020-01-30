@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private ArrayList<Button> buttonArry;
 
-    private int maxAttempts = 5;
     private int attempt;
 
     @Override
@@ -165,8 +164,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(checkWin()){
             openWinDialog();
         }
-
-
     }
 
     private boolean checkIncludeLetterAndReplaceInsteadOfUnderscore(String letter){
@@ -193,7 +190,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         wordTextId.setText(resultWithSpace);
-
     }
 
     private void switchPropertiesButtonAfterWrongChoice(Button b){
@@ -241,9 +237,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void openLoseDialog(){
+        TextView correct;
         loseDialog = new Dialog(MainActivity.this);
         loseDialog.setContentView(R.layout.losedialog);
         loseDialog.setTitle("Lose Dialog");
+        correct = loseDialog.findViewById(R.id.correctAnswer);
+        correct.setText(word);
         loseDialog.setCancelable(false);
         loseDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
@@ -277,7 +276,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dbManager.open();
         ArrayList wordsArray = dbManager.getColumnDates(category);
         dbManager.close();
-
 
         int randomValue = new Random().nextInt(wordsArray.size());
 
